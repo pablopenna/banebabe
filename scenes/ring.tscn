@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7r7qwxwce1oc"]
+
+[ext_resource type="Texture2D" uid="uid://co807fyja20h" path="res://art/field_v1.png" id="1_cgvfe"]
+
+[node name="Ring" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(587, 325)
+scale = Vector2(20, 20)
+texture = ExtResource("1_cgvfe")

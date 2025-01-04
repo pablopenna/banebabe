@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bqh84kuvdu75i"]
+[gd_scene load_steps=3 format=3 uid="uid://bqh84kuvdu75i"]
+
+[ext_resource type="PackedScene" uid="uid://c7r7qwxwce1oc" path="res://scenes/ring.tscn" id="1_1551y"]
+[ext_resource type="PackedScene" uid="uid://bpq1mlsart0hp" path="res://scenes/banebabe/banebabe.tscn" id="2_nc6t7"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Ring" parent="." instance=ExtResource("1_1551y")]
+
+[node name="Banebabe" parent="." instance=ExtResource("2_nc6t7")]
+position = Vector2(587, 323)

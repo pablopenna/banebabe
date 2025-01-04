@@ -8,3 +8,9 @@
 position = Vector2(587, 325)
 scale = Vector2(20, 20)
 texture = ExtResource("1_cgvfe")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(534, 70, 649, 73, 797, 138, 859, 271, 855, 380, 739, 540, 643, 572, 528, 575, 435, 535, 329, 429, 313, 376, 309, 272, 417, 129)

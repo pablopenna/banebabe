@@ -1,17 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpq1mlsart0hp"]
+[gd_scene load_steps=5 format=3 uid="uid://bpq1mlsart0hp"]
 
 [ext_resource type="Texture2D" uid="uid://c72yx0qa5g0x2" path="res://art/babeblade_v1.png" id="1_bq1d8"]
 [ext_resource type="Script" path="res://scenes/banebabe/banebabe.gd" id="1_ld43e"]
+[ext_resource type="Script" path="res://scenes/banebabe/rotating_sprite.gd" id="3_7qnj8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_omwoe"]
 radius = 18.0278
 
 [node name="Banebabe" type="CharacterBody2D"]
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_ld43e")
+move_speed = 200
+steering_speed = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bq1d8")
+script = ExtResource("3_7qnj8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_omwoe")

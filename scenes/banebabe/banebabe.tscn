@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bpq1mlsart0hp"]
 
-[ext_resource type="Texture2D" uid="uid://c72yx0qa5g0x2" path="res://art/babeblade_v1.png" id="1_bq1d8"]
 [ext_resource type="Script" path="res://scenes/banebabe/banebabe.gd" id="1_ld43e"]
+[ext_resource type="Texture2D" uid="uid://euickqpmtmpm" path="res://art/babeblade_v1_2.png" id="2_44ef7"]
 [ext_resource type="Script" path="res://scenes/banebabe/rotating_sprite.gd" id="3_7qnj8"]
 [ext_resource type="Script" path="res://scenes/banebabe/debug_lines.gd" id="4_4a12j"]
 [ext_resource type="Script" path="res://scenes/banebabe/clash_audio.gd" id="5_888dc"]
@@ -16,7 +16,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_ld43e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_bq1d8")
+texture = ExtResource("2_44ef7")
 script = ExtResource("3_7qnj8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

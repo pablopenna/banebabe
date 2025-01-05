@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqh84kuvdu75i"]
+[gd_scene load_steps=4 format=3 uid="uid://bqh84kuvdu75i"]
 
 [ext_resource type="PackedScene" uid="uid://c7r7qwxwce1oc" path="res://scenes/ring.tscn" id="1_1551y"]
 [ext_resource type="PackedScene" uid="uid://bpq1mlsart0hp" path="res://scenes/banebabe/banebabe.tscn" id="2_nc6t7"]
+[ext_resource type="PackedScene" uid="uid://bnvl1vij2xxj8" path="res://scenes/banebabe/dummy/dummy.tscn" id="3_oua5a"]
 
 [node name="Main" type="Node2D"]
 
@@ -9,3 +10,6 @@
 
 [node name="Banebabe" parent="." instance=ExtResource("2_nc6t7")]
 position = Vector2(587, 323)
+
+[node name="Dummy" parent="." instance=ExtResource("3_oua5a")]
+position = Vector2(588, 440)

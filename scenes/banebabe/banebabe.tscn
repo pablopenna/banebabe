@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpq1mlsart0hp"]
+[gd_scene load_steps=6 format=3 uid="uid://bpq1mlsart0hp"]
 
 [ext_resource type="Texture2D" uid="uid://c72yx0qa5g0x2" path="res://art/babeblade_v1.png" id="1_bq1d8"]
 [ext_resource type="Script" path="res://scenes/banebabe/banebabe.gd" id="1_ld43e"]
 [ext_resource type="Script" path="res://scenes/banebabe/rotating_sprite.gd" id="3_7qnj8"]
+[ext_resource type="Script" path="res://scenes/banebabe/debug_lines.gd" id="4_4a12j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_omwoe"]
 radius = 18.0278
@@ -20,3 +21,7 @@ script = ExtResource("3_7qnj8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_omwoe")
+
+[node name="DebugLines" type="Node2D" parent="." node_paths=PackedStringArray("banebabe")]
+script = ExtResource("4_4a12j")
+banebabe = NodePath("..")

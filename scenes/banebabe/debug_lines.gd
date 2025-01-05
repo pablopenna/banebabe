@@ -11,5 +11,5 @@ func _draw() -> void:
 	# target direction
 	draw_line(Vector2.ZERO, banebabe.get_target_direction() * 100, Color.RED, 1.0)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	queue_redraw()

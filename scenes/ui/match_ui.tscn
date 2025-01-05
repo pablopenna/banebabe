@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://04x0iuhp8ljj"]
+
+[ext_resource type="Script" path="res://scenes/ui/match_ui.gd" id="1_nse3h"]
+
+[node name="MatchUI" type="CanvasLayer" node_paths=PackedStringArray("_speed_bar")]
+script = ExtResource("1_nse3h")
+_speed_bar = NodePath("SpeedBar")
+
+[node name="SpeedBar" type="ProgressBar" parent="."]
+anchors_preset = -1
+anchor_left = 0.0564236
+anchor_top = 1.0
+anchor_right = 0.946181
+anchor_bottom = 1.0
+offset_left = 257.0
+offset_top = -27.0
+offset_right = -258.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+metadata/_edit_use_anchors_ = true

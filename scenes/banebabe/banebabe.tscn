@@ -14,8 +14,6 @@ radius = 18.0278
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_ld43e")
-move_speed = 200
-steering_speed = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bq1d8")

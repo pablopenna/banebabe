@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpq1mlsart0hp"]
+[gd_scene load_steps=8 format=3 uid="uid://bpq1mlsart0hp"]
 
 [ext_resource type="Texture2D" uid="uid://c72yx0qa5g0x2" path="res://art/babeblade_v1.png" id="1_bq1d8"]
 [ext_resource type="Script" path="res://scenes/banebabe/banebabe.gd" id="1_ld43e"]
 [ext_resource type="Script" path="res://scenes/banebabe/rotating_sprite.gd" id="3_7qnj8"]
 [ext_resource type="Script" path="res://scenes/banebabe/debug_lines.gd" id="4_4a12j"]
+[ext_resource type="Script" path="res://scenes/banebabe/clash_audio.gd" id="5_888dc"]
+[ext_resource type="AudioStream" uid="uid://dupfm5ovu1tmx" path="res://sfx/metal-clang-sound-81634.mp3" id="5_hposa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_omwoe"]
 radius = 18.0278
@@ -24,4 +26,9 @@ shape = SubResource("CircleShape2D_omwoe")
 
 [node name="DebugLines" type="Node2D" parent="." node_paths=PackedStringArray("banebabe")]
 script = ExtResource("4_4a12j")
+banebabe = NodePath("..")
+
+[node name="ClashAudio" type="AudioStreamPlayer2D" parent="." node_paths=PackedStringArray("banebabe")]
+stream = ExtResource("5_hposa")
+script = ExtResource("5_888dc")
 banebabe = NodePath("..")

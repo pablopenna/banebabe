@@ -6,7 +6,7 @@ var acceleration_speed := 2.0
 var deceleration_speed := 2.0
 var drifting_lower_threshold := 150
 var drifting_upper_threshold := 350
-var drift_duration := 1.0
+var drift_duration := 0.5
 @onready
 var is_drifting := false
 @onready
@@ -18,7 +18,8 @@ var max_speed_steering_speed := 1.0
 var steering_speed := min_speed_steering_speed
 
 signal collided
-signal drifted
+signal drifting_started
+signal drifting_ended
 
 func _physics_process(delta: float) -> void:
 	_process_drifting()
@@ -28,8 +29,12 @@ func _physics_process(delta: float) -> void:
 func _process_drifting() -> void:
 	if not is_drifting and _is_drift_input_performed_in_this_frame():
 		is_drifting = true
-		drifted.emit()
-		get_tree().create_timer(drift_duration).timeout.connect(func(): is_drifting = false)
+		drifting_started.emit()
+		get_tree().create_timer(drift_duration).timeout.connect(
+			func(): 
+				is_drifting = false
+				drifting_ended.emit()
+		)
 
 func _process_speed(delta: float) -> void:
 	if Input.is_action_pressed("player_accelerate"):

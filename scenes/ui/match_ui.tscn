@@ -1,21 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://04x0iuhp8ljj"]
+[gd_scene load_steps=7 format=3 uid="uid://04x0iuhp8ljj"]
 
 [ext_resource type="Script" path="res://scenes/ui/match_ui.gd" id="1_nse3h"]
 
-[node name="MatchUI" type="CanvasLayer" node_paths=PackedStringArray("_speed_bar")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tu51"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5mdj"]
+bg_color = Color(0.262973, 0.70098, 0.39171, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stfrc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w61wn"]
+bg_color = Color(0.678277, 0, 0.0396536, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_viuv4"]
+
+[node name="MatchUI" type="CanvasLayer" node_paths=PackedStringArray("_speed_bar", "_min_threshold_bar", "_max_threshold_bar")]
 script = ExtResource("1_nse3h")
 _speed_bar = NodePath("SpeedBar")
+_min_threshold_bar = NodePath("MinThreshold")
+_max_threshold_bar = NodePath("MaxThreshold")
 
 [node name="SpeedBar" type="ProgressBar" parent="."]
+z_index = -1
 anchors_preset = -1
-anchor_left = 0.0564236
-anchor_top = 1.0
-anchor_right = 0.946181
-anchor_bottom = 1.0
-offset_left = 257.0
-offset_top = -27.0
-offset_right = -258.0
-grow_horizontal = 2
-grow_vertical = 0
+anchor_left = 0.2
+anchor_top = 0.95
+anchor_right = 0.8
+anchor_bottom = 0.99
+theme_override_styles/background = SubResource("StyleBoxFlat_1tu51")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g5mdj")
 max_value = 1.0
+value = 0.5
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="MinThreshold" type="ProgressBar" parent="."]
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.95
+anchor_right = 0.8
+anchor_bottom = 0.99
+theme_override_styles/background = SubResource("StyleBoxEmpty_stfrc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w61wn")
+max_value = 1.0
+value = 0.01
+fill_mode = 1
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="MaxThreshold" type="ProgressBar" parent="."]
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.95
+anchor_right = 0.8
+anchor_bottom = 0.99
+theme_override_styles/background = SubResource("StyleBoxEmpty_viuv4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w61wn")
+max_value = 1.0
+value = 0.01
+fill_mode = 1
+show_percentage = false
 metadata/_edit_use_anchors_ = true

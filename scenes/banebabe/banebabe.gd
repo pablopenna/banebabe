@@ -48,6 +48,7 @@ func _process_movement(delta:float) -> void:
 	
 	if collision != null:
 		velocity = velocity.bounce(collision.get_normal()) * 2
+		is_drifting = false
 		collided.emit()
 	
 	move_and_collide(velocity * delta, false)

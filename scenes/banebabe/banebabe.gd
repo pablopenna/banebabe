@@ -17,6 +17,8 @@ var max_speed_steering_speed := 1.0
 @onready
 var steering_speed := min_speed_steering_speed
 
+var bounce_factor := 1.2
+
 signal collided
 signal drifting_started
 signal drifting_ended
@@ -44,7 +46,7 @@ func _process_speed(delta: float) -> void:
 		move_speed = lerpf(move_speed, min_move_speed, deceleration_speed * delta)
 		steering_speed = lerp(steering_speed, min_speed_steering_speed, deceleration_speed * delta)
 		
-	move_speed = clampf(move_speed, min_move_speed, max_move_speed)
+	# move_speed = clampf(move_speed, min_move_speed, max_move_speed)
 	steering_speed = clampf(steering_speed, max_speed_steering_speed, min_speed_steering_speed)
 
 func _process_movement(delta:float) -> void:
@@ -52,7 +54,8 @@ func _process_movement(delta:float) -> void:
 	var collision := move_and_collide(velocity * delta, true)
 	
 	if collision != null:
-		velocity = velocity.bounce(collision.get_normal()) * 2
+		velocity = velocity.bounce(collision.get_normal()) * bounce_factor
+		move_speed *= bounce_factor
 		is_drifting = false
 		collided.emit()
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bpq1mlsart0hp"]
+[gd_scene load_steps=19 format=3 uid="uid://bpq1mlsart0hp"]
 
 [ext_resource type="Script" path="res://scenes/banebabe/banebabe.gd" id="1_ld43e"]
 [ext_resource type="Texture2D" uid="uid://euickqpmtmpm" path="res://art/babeblade_v1_2.png" id="2_44ef7"]
+[ext_resource type="Resource" uid="uid://bsii0oc53hwf6" path="res://scenes/banebabe/stats/player_banebabe.tres" id="2_e5ijc"]
 [ext_resource type="Script" path="res://scenes/banebabe/rotating_sprite.gd" id="3_7qnj8"]
 [ext_resource type="Script" path="res://scenes/banebabe/debug_lines.gd" id="4_4a12j"]
 [ext_resource type="AudioStream" uid="uid://dupfm5ovu1tmx" path="res://sfx/metal-clang-sound-81634.mp3" id="5_hposa"]
@@ -63,6 +64,7 @@ alpha_curve = SubResource("CurveTexture_4skiu")
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_ld43e")
+stats = ExtResource("2_e5ijc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_44ef7")
@@ -92,6 +94,7 @@ lifetime = 0.5
 
 [node name="DriftDirt" type="GPUParticles2D" parent="."]
 z_index = -1
+emitting = false
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_gpqfv")
 texture = ExtResource("8_ym2oh")

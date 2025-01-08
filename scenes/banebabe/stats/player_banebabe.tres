@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BanebabeStat" load_steps=2 format=3 uid="uid://bsii0oc53hwf6"]
+
+[ext_resource type="Script" path="res://scenes/banebabe/stats/banebabe_stat.gd" id="1_n5mnh"]
+
+[resource]
+script = ExtResource("1_n5mnh")
+min_move_speed = 100.0
+max_move_speed = 600.0
+acceleration_speed = 2.0
+deceleration_speed = 2.5
+drifting_lower_threshold = 150.0
+drifting_upper_threshold = 350.0
+drift_duration = 0.5
+min_speed_steering_speed = 6.0
+max_speed_steering_speed = 2.0
+bounce_factor = 1.2

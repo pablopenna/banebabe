@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://orcfhbkylbn0" path="res://sfx/whoosh-slowed-92153.mp3" id="6_secud"]
 [ext_resource type="Texture2D" uid="uid://bxms8xith0hnq" path="res://art/particles/spark_02.png" id="7_tar82"]
 [ext_resource type="Texture2D" uid="uid://2s60minfixib" path="res://art/particles/smoke_01.png" id="8_ym2oh"]
-[ext_resource type="Script" path="res://scenes/banebabe/driver/player_driver.gd" id="10_cu4ks"]
+[ext_resource type="Script" path="res://scenes/banebabe/drivers/player_driver.gd" id="10_cu4ks"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_omwoe"]
 radius = 18.0278

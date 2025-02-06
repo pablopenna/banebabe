@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bnvl1vij2xxj8"]
 
-[ext_resource type="Script" path="res://scenes/banebabe/dummy/dummy.gd" id="1_agltt"]
+[ext_resource type="Script" path="res://scenes/banebabe/banebabe.gd" id="1_r4p8s"]
 [ext_resource type="Texture2D" uid="uid://bhbeafvw1l6vy" path="res://art/babeblade_v2.png" id="2_4524w"]
 [ext_resource type="Resource" uid="uid://bsii0oc53hwf6" path="res://scenes/banebabe/stats/player_banebabe.tres" id="2_nqmij"]
 [ext_resource type="Script" path="res://scenes/banebabe/rotating_sprite.gd" id="3_amq57"]
 [ext_resource type="Script" path="res://scenes/banebabe/debug_lines.gd" id="4_ids56"]
-[ext_resource type="Script" path="res://scenes/banebabe/driver/driver.gd" id="6_286af"]
+[ext_resource type="Script" path="res://scenes/banebabe/drivers/driver.gd" id="6_286af"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_omwoe"]
 radius = 18.0278
@@ -13,7 +13,7 @@ radius = 18.0278
 [node name="Dummy" type="CharacterBody2D" node_paths=PackedStringArray("driver")]
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_agltt")
+script = ExtResource("1_r4p8s")
 driver = NodePath("Driver")
 stats = ExtResource("2_nqmij")
 

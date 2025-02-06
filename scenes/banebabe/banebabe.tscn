@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpq1mlsart0hp"]
+[gd_scene load_steps=20 format=3 uid="uid://bpq1mlsart0hp"]
 
 [ext_resource type="Script" path="res://scenes/banebabe/banebabe.gd" id="1_ld43e"]
 [ext_resource type="Texture2D" uid="uid://euickqpmtmpm" path="res://art/babeblade_v1_2.png" id="2_44ef7"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://orcfhbkylbn0" path="res://sfx/whoosh-slowed-92153.mp3" id="6_secud"]
 [ext_resource type="Texture2D" uid="uid://bxms8xith0hnq" path="res://art/particles/spark_02.png" id="7_tar82"]
 [ext_resource type="Texture2D" uid="uid://2s60minfixib" path="res://art/particles/smoke_01.png" id="8_ym2oh"]
+[ext_resource type="Script" path="res://scenes/banebabe/driver/player_driver.gd" id="10_cu4ks"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_omwoe"]
 radius = 18.0278
@@ -60,10 +61,11 @@ scale_curve = SubResource("CurveTexture_qd1b7")
 color = Color(0.43, 0.43, 0.43, 1)
 alpha_curve = SubResource("CurveTexture_4skiu")
 
-[node name="Banebabe" type="CharacterBody2D"]
+[node name="PlayerBanebabe" type="CharacterBody2D" node_paths=PackedStringArray("driver")]
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_ld43e")
+driver = NodePath("Driver")
 stats = ExtResource("2_e5ijc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -99,6 +101,9 @@ amount = 16
 process_material = SubResource("ParticleProcessMaterial_gpqfv")
 texture = ExtResource("8_ym2oh")
 lifetime = 0.5
+
+[node name="Driver" type="Node2D" parent="."]
+script = ExtResource("10_cu4ks")
 
 [connection signal="collided" from="." to="ClashAudio" method="play"]
 [connection signal="drifting_ended" from="." to="DriftDirt" method="set_emitting" binds= [false]]
